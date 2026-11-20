@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F4F7FA; --card: #FFFFFF; --fg: #0F172A; --muted: #475569; --line: #E2E8F0;
+  --primary: #2563EB; --primary-fg: #FFFFFF; --secondary: #E3E9F5; --danger: #B91C1C;
+}
+.dark {
+  --bg: #0F172A; --card: #1E293B; --fg: #F8FAFC; --muted: #CBD5E1; --line: #334155;
+  --primary: #3B82F6; --primary-fg: #0F172A; --secondary: #273449; --danger: #FCA5A5;
+}
+body { background: var(--bg); color: var(--fg); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+@layer components {
+  .card { @apply rounded-xl border border-line bg-card p-4; }
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-fg disabled:opacity-60; }
+  .btn-sec { @apply inline-flex min-h-[44px] items-center justify-center rounded-lg border border-line bg-secondary px-4 py-2 text-sm font-semibold text-fg disabled:opacity-60; }
+  .input { @apply min-h-[44px] w-full rounded-lg border border-line bg-card px-3 py-2 text-fg; }
+  .label { @apply mb-1 block text-sm font-medium; }
+  .err { @apply text-sm font-medium text-danger; }
+}
